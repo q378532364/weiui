@@ -1,3 +1,5 @@
+$classPrefix: 'wei' !default; // class名称前缀
+
 $white: #fff !default; // scss使用的默认属性
 $black: #000 !default;
 $gray-1: #f3f3f3 !default;
@@ -331,3 +333,7 @@ $progress-bg: $gray-3 !default;
 $progress-border-radius: $border-radius !default;
 $progress-bar-color: $white !default;
 $progress-bar-transition: width 0.6s ease !default;
+
+:export {
+  classPrefix: #{$classPrefix};
+}

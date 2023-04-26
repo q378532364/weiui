@@ -1,0 +1,50 @@
+@import '../../styles/variablex';
+.#{$classPrefix} {
+  &__button {
+    padding: $btn-padding-y $btn-padding-x;
+    border: none;
+    outline: none;
+    font-size: $btn-font-size;
+    font-weight: $font-weight-normal;
+    display: inline-block;
+    border-radius: $border-radius;
+    margin: 0 2px;
+    touch-action: manipulation;
+    vertical-align: middle;
+
+    &--primary {
+      background-color: $primary;
+      color: $white;
+    }
+
+    &--warning {
+      background-color: $warning;
+      color: $white;
+    }
+
+    &--danger {
+      background-color: $danger;
+      color: $white;
+    }
+
+    &--success {
+      background-color: $success;
+      color: $white;
+    }
+
+    &--sm {
+      padding: $btn-padding-y-sm $btn-padding-x-sm;
+      border-radius: $border-radius-sm;
+    }
+
+    &--lg {
+      padding: $btn-padding-y-lg $btn-padding-x-lg;
+      border-radius: $border-radius-lg;
+    }
+
+    &--full {
+      display: block;
+      width: 100%;
+    }
+  }
+}
