@@ -13,6 +13,7 @@ interface ButtonProps {
   loading: boolean
   size: 'small' | 'large'
   block: boolean
+  variant: 'default' | 'outline' | 'text' | 'dashed' // 按钮类型 描边 文本 幽灵
 }
 
 const Button: React.FC<
@@ -33,8 +34,10 @@ const Button: React.FC<
     'button',
     {
       className: classnames([
+
         `${styles.classPrefix}__button`,
-        `${styles.classPrefix}__button--${theme}`,
+        `${styles.classPrefix}__button--theme--${theme}`,
+
         {
           [`${styles.classPrefix}__button--loading`]: loading || disabled,
           [`${styles.classPrefix}__button--disable`]: disabled,

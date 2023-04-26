@@ -2,7 +2,7 @@ import React from 'react'
 import Button from './components/Button/button'
 
 function App() {
-  const ref = React.createRef()
+  // const ref = React.createRef()
   return (
     <div
       className="App"

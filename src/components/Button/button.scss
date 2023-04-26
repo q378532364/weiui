@@ -1,4 +1,5 @@
 @import '../../styles/variablex';
+
 .#{$classPrefix} {
   &__button {
     padding: $btn-padding-y $btn-padding-x;
@@ -12,25 +13,28 @@
     touch-action: manipulation;
     vertical-align: middle;
 
-    &--primary {
-      background-color: $primary;
-      color: $white;
+    &--theme {
+      &--primary {
+        background-color: $primary;
+        color: $white;
+      }
+
+      &--warning {
+        background-color: $warning;
+        color: $white;
+      }
+
+      &--danger {
+        background-color: $danger;
+        color: $white;
+      }
+
+      &--success {
+        background-color: $success;
+        color: $white;
+      }
     }
 
-    &--warning {
-      background-color: $warning;
-      color: $white;
-    }
-
-    &--danger {
-      background-color: $danger;
-      color: $white;
-    }
-
-    &--success {
-      background-color: $success;
-      color: $white;
-    }
 
     &--sm {
       padding: $btn-padding-y-sm $btn-padding-x-sm;
