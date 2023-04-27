@@ -1,4 +1,5 @@
 @import '../../styles/variablex';
+@import '../../styles/mixins';
 
 .#{$classPrefix} {
   &__button {
@@ -8,33 +9,60 @@
     font-size: $btn-font-size;
     font-weight: $font-weight-normal;
     display: inline-block;
-    border-radius: $border-radius;
     margin: 0 2px;
     touch-action: manipulation;
     vertical-align: middle;
+    transform: all 0.3s;
+    color: $text-muted;
+    &:hover {
+      opacity: 0.9;
+    }
 
     &--theme {
       &--primary {
         background-color: $primary;
         color: $white;
+        border-color: $primary;
       }
 
       &--warning {
-        background-color: $warning;
+        background: $warning;
         color: $white;
+        border-color: $warning;
       }
 
       &--danger {
-        background-color: $danger;
+        background: $danger;
         color: $white;
+        border-color: $danger;
       }
 
       &--success {
-        background-color: $success;
+        background: $success;
         color: $white;
+        border-color: $success;
       }
     }
 
+    &--variant {
+      &--outline {
+        border-width: 1px;
+        border-style: solid;
+        background-color: transparent;
+      }
+
+      &--dashed {
+        border-width: 1px;
+        border-style: dashed;
+        background-color: transparent;
+      }
+
+      &--text {
+        border-style: none;
+        background-color: transparent;
+        color: $text-muted;
+      }
+    }
 
     &--sm {
       padding: $btn-padding-y-sm $btn-padding-x-sm;

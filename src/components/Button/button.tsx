@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { forwardRef } from 'react'
 import type { ButtonHTMLAttributes } from 'react'
 import classnames from 'classnames'
 import styles from '../../styles/_variablex.scss'
@@ -16,45 +16,51 @@ interface ButtonProps {
   variant: 'default' | 'outline' | 'text' | 'dashed' // 按钮类型 描边 文本 幽灵
 }
 
-const Button: React.FC<
-  Partial<ButtonProps> & ButtonHTMLAttributes<HTMLButtonElement>
-> = (props) => {
-  const {
-    theme,
-    className,
-    disabled,
-    loading,
-    size,
-    block,
-    children,
-    ...restProps
-  } = props
-  console.log(styles)
-  return React.createElement(
-    'button',
-    {
-      className: classnames([
+const Button = forwardRef(
+  (
+    props: Partial<ButtonProps> & ButtonHTMLAttributes<HTMLElement>,
+    ref: React.ForwardedRef<HTMLElement>
+  ) => {
+    const {
+      theme,
+      className,
+      disabled,
+      loading,
+      size,
+      block,
+      children,
+      variant,
+      ...restProps
+    } = props
 
-        `${styles.classPrefix}__button`,
-        `${styles.classPrefix}__button--theme--${theme}`,
+    return React.createElement(
+      'button',
+      {
+        ref,
+        className: classnames([
+          `${styles.classPrefix}__button`,
+          `${styles.classPrefix}__button--variant--${variant}`,
+          `${styles.classPrefix}__button--theme--${theme}`,
 
-        {
-          [`${styles.classPrefix}__button--loading`]: loading || disabled,
-          [`${styles.classPrefix}__button--disable`]: disabled,
-          [`${styles.classPrefix}__button--sm`]: size === 'small',
-          [`${styles.classPrefix}__button--lg`]: size === 'large',
-          [`${styles.classPrefix}__button--full`]: block,
-        },
+          {
+            [`${styles.classPrefix}__button--loading`]: loading || disabled,
+            [`${styles.classPrefix}__button--disable`]: disabled,
+            [`${styles.classPrefix}__button--sm`]: size === 'small',
+            [`${styles.classPrefix}__button--lg`]: size === 'large',
+            [`${styles.classPrefix}__button--full`]: block,
+          },
 
-        className,
-      ]),
-      ...restProps,
-    },
-    <>{children}</>
-  )
-}
+          className,
+        ]),
+        ...restProps,
+      },
+      <>{children}</>
+    )
+  }
+)
 Button.defaultProps = {
   theme: 'default',
   type: 'submit',
+  variant: 'default',
 }
 export default Button

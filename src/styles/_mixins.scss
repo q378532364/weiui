@@ -1,0 +1,35 @@
+@import 'variablex';
+
+@mixin border($color: #{$primary}, $type: solid, $px: 1px) {
+  border-color: $color;
+  border-style: $type;
+  border-width: $px;
+}
+
+// 显示多行，省略号
+@mixin ellipsis($row: 1) {
+  /* 显示两行，省略号 */
+  text-overflow: -o-ellipsis-lastline;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: $row;
+  line-clamp: $row;
+  -webkit-box-orient: vertical;
+}
+
+@mixin button-attr-color($theme, $attr, $ghost: false) {
+  @if ($ghost) {
+    &:active {
+      #{$attr}: $theme;
+    }
+    &:hover {
+      #{$attr}: $theme;
+    }
+  }
+  #{$attr}: $theme;
+
+  @if ($ghost) {
+    background-color: transparent;
+  }
+}
