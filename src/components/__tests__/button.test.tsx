@@ -16,7 +16,6 @@ describe("test button compent", () => {
     expect(element.tagName).toEqual("BUTTON")
     expect(element).toHaveClass("wei__button--theme--default")
 
-
   })
 })
 

@@ -14,7 +14,7 @@ function App() {
       style={{
         padding: 20,
       }}>
-      <h2>button</h2>
+      {/* <h2>button</h2>
       <hr />
       <Button ref={ref2}>填充颜色</Button>
       <Button theme="primary">填充颜色</Button>
@@ -33,7 +33,12 @@ function App() {
       </Button>
       <Button variant="text" theme="success">
         填充颜色
-      </Button>
+      </Button> */}
+      <div className='box'>
+
+        <div className='item'></div>
+
+      </div>
     </div>
   )
 }
