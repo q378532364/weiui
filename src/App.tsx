@@ -14,10 +14,19 @@ function App() {
       style={{
         padding: 20,
       }}>
-      {/* <h2>button</h2>
+      <h2>button</h2>
       <hr />
-      <Button ref={ref2}>填充颜色</Button>
-      <Button theme="primary">填充颜色</Button>
+      <Button ref={ref2}>
+        <div>填充颜色</div>
+      </Button>
+      <Button
+        theme="primary"
+        disabled
+        onClick={() => {
+          alert()
+        }}>
+        填充颜色1
+      </Button>
       <Button theme="success">填充颜色</Button>
       <Button theme="danger">填充颜色</Button>
       <Button theme="warning" block>
@@ -33,12 +42,12 @@ function App() {
       </Button>
       <Button variant="text" theme="success">
         填充颜色
-      </Button> */}
-      <div className='box'>
+      </Button>
+      {/* <div className='box'>
 
         <div className='item'></div>
 
-      </div>
+      </div> */}
     </div>
   )
 }

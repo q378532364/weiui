@@ -14,37 +14,79 @@
     vertical-align: middle;
     transform: all 0.3s;
     color: $text-muted;
+
+    // 自定义的classname
+    $button_text: #{&}__text;
+
     &:hover {
-      opacity: 0.9;
+      opacity: 0.95;
+      transition: 0.15 ease-in-out;
+    }
+
+    &#{&}--disabled {
+      opacity: 0.5;
+      pointer-events: visible;
+      cursor: not-allowed;
+    }
+
+    &--shape {
+      &--square {
+        border-radius: $border-radius;
+      }
+
+      &--round {
+        border-radius: $border-radius * 3;
+      }
+
+      &--round {
+        border-radius: 50%;
+      }
     }
 
     &--theme {
+      &--default {
+        span#{$button_text} {
+          color: $text-muted;
+        }
+      }
       &--primary {
         background-color: $primary;
-        color: $white;
         border-color: $primary;
+        #{$button_text} {
+          color: $primary;
+        }
       }
-
       &--warning {
         background: $warning;
-        color: $white;
         border-color: $warning;
+        #{$button_text} {
+          color: $warning;
+        }
       }
 
       &--danger {
         background: $danger;
-        color: $white;
         border-color: $danger;
+        #{$button_text} {
+          color: $danger;
+        }
       }
 
       &--success {
         background: $success;
-        color: $white;
         border-color: $success;
+        #{$button_text} {
+          color: $success;
+        }
       }
     }
 
     &--variant {
+      &--default {
+        #{$button_text} {
+          color: $white;
+        }
+      }
       &--outline {
         border-width: 1px;
         border-style: solid;
@@ -80,3 +122,7 @@
     }
   }
 }
+
+// .wei__button.wei__button--disabled {
+//   opacity: 0.3;
+// }

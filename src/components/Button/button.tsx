@@ -14,6 +14,7 @@ interface ButtonProps {
   size: 'small' | 'large'
   block: boolean
   variant: 'default' | 'outline' | 'text' | 'dashed' // 按钮类型 描边 文本 幽灵
+  shape: 'default' | 'square' | 'round' | 'circle'
 }
 
 const Button = forwardRef(
@@ -30,6 +31,7 @@ const Button = forwardRef(
       block,
       children,
       variant,
+      shape,
       ...restProps
     } = props
 
@@ -39,12 +41,14 @@ const Button = forwardRef(
         ref,
         className: classnames([
           `${styles.classPrefix}__button`,
+
           `${styles.classPrefix}__button--variant--${variant}`,
           `${styles.classPrefix}__button--theme--${theme}`,
+          `${styles.classPrefix}__button--shape--${shape}`,
 
           {
             [`${styles.classPrefix}__button--loading`]: loading || disabled,
-            [`${styles.classPrefix}__button--disable`]: disabled,
+            [`${styles.classPrefix}__button--disabled`]: disabled,
             [`${styles.classPrefix}__button--sm`]: size === 'small',
             [`${styles.classPrefix}__button--lg`]: size === 'large',
             [`${styles.classPrefix}__button--full`]: block,
@@ -54,7 +58,11 @@ const Button = forwardRef(
         ]),
         ...restProps,
       },
-      <>{children}</>
+      <>
+        <span className={classnames([`${styles.classPrefix}__button__text`])}>
+          {children}
+        </span>
+      </>
     )
   }
 )
@@ -62,5 +70,6 @@ Button.defaultProps = {
   theme: 'default',
   type: 'submit',
   variant: 'default',
+  shape: 'default',
 }
 export default Button

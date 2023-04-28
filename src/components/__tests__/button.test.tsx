@@ -1,21 +1,19 @@
-import React from "react";
-import { render } from "@testing-library/react"
-import Button from "../Button/button";
+import React from 'react'
+import { render } from '@testing-library/react'
+import Button from '../Button/button'
 
-test("test button", () => {
+test('test button', () => {
   const wrap = render(<Button>123</Button>)
   const element = wrap.queryAllByText('123')
   expect(element).toBeTruthy()
 })
 
-describe("test button compent", () => {
-  it("should render the correct default button", () => {
+describe('test button compent', () => {
+  it('should render the correct default button', () => {
     const wrap = render(<Button>123</Button>)
-    const element = wrap.getByTestId("123")
+    const element = wrap.getByTestId('123')
     expect(element).toBeInTheDocument()
-    expect(element.tagName).toEqual("BUTTON")
-    expect(element).toHaveClass("wei__button--theme--default")
-
+    expect(element.tagName).toEqual('BUTTON')
+    expect(element).toHaveClass('wei__button--theme--default')
   })
 })
-
