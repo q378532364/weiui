@@ -5,10 +5,9 @@ import styles from '../../styles/_variablex.scss'
 import './button.scss'
 
 type themeType = 'default' | 'primary' | 'danger' | 'warning' | 'success'
-type btype = 'submit' | 'button' | 'reset'
+
 interface ButtonProps {
   theme: themeType
-  type: btype
   disabled: boolean
   loading: boolean
   size: 'small' | 'large'
@@ -32,6 +31,7 @@ const Button = forwardRef(
       children,
       variant,
       shape,
+
       ...restProps
     } = props
 
@@ -39,6 +39,7 @@ const Button = forwardRef(
       'button',
       {
         ref,
+        disabled: disabled,
         className: classnames([
           `${styles.classPrefix}__button`,
 
@@ -58,6 +59,7 @@ const Button = forwardRef(
         ]),
         ...restProps,
       },
+
       <>
         <span className={classnames([`${styles.classPrefix}__button__text`])}>
           {children}
@@ -68,7 +70,6 @@ const Button = forwardRef(
 )
 Button.defaultProps = {
   theme: 'default',
-  type: 'submit',
   variant: 'default',
   shape: 'default',
 }

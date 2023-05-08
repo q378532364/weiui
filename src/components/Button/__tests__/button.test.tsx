@@ -1,6 +1,6 @@
 import React from 'react'
+import Button from '../button'
 import { render } from '@testing-library/react'
-import Button from '../Button/button'
 
 test('test button', () => {
   const wrap = render(<Button>123</Button>)

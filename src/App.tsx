@@ -43,11 +43,14 @@ function App() {
       <Button variant="text" theme="success">
         填充颜色
       </Button>
-      {/* <div className='box'>
-
-        <div className='item'></div>
-
-      </div> */}
+      <h2>shape</h2>
+      <hr />
+      <Button theme="success" shape="circle">
+        A
+      </Button>
+      <Button type="submit" theme="success" shape="round">
+        round
+      </Button>
     </div>
   )
 }
