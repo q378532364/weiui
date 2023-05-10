@@ -83,7 +83,7 @@
 
     &--variant {
       &--default {
-        #{$button_text} {
+        > #{$button_text} {
           color: $white;
         }
       }

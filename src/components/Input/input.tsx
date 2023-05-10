@@ -1,18 +1,45 @@
 import React from 'react'
 import classNames from 'classnames'
+import styles from '../../styles/_variablex.scss'
 import './input.scss'
 
+interface InputProps {
+  suffix: React.ReactNode
+}
+
 const Input = React.forwardRef(
-  (props: any, ref: React.ForwardedRef<HTMLInputElement>) => {
+  (
+    props: React.InputHTMLAttributes<HTMLInputElement> & Partial<InputProps>,
+    ref: React.ForwardedRef<HTMLInputElement>
+  ) => {
+    const { suffix } = props
     return (
       <>
         {React.createElement(
-          'input',
+          'div',
           {
-            className: classNames(['wei__input', {}]),
-            ...props
+            className: classNames([`${styles.classPrefix}__input`])
           },
-          <span>21321</span>
+
+          React.createElement('input', {
+            className: classNames([
+              `${styles.classPrefix}__input__inner`,
+              {
+                [`${styles.classPrefix}__input__suffix`]: suffix
+              }
+            ]),
+            ...props
+          }),
+          <>
+            {
+              <span
+                className={classNames([
+                  `${styles.classPrefix}__input__suffix`
+                ])}>
+                {suffix}
+              </span>
+            }
+          </>
         )}
       </>
     )

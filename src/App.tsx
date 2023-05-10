@@ -1,5 +1,6 @@
 import React, { useEffect } from 'react'
 import Button from './components/Button/button'
+import Input from './components/Input/input'
 import './app.scss'
 
 function App() {
@@ -21,11 +22,11 @@ function App() {
     <div
       className="App"
       style={{
-        padding: 20,
+        padding: 20
       }}>
       <h2>button</h2>
       <hr />
-      <Button ref={ref2} className='mybutton'>
+      <Button ref={ref2} className="mybutton">
         <div>填充颜色</div>
       </Button>
       <Button
@@ -49,17 +50,22 @@ function App() {
       <Button variant="dashed" theme="danger">
         填充颜色
       </Button>
-      <Button variant="text" theme="success">
-        填充颜色
-      </Button>
+      <Button variant="text">填充颜色</Button>
       <h2>shape</h2>
       <hr />
       <Button theme="success" shape="circle">
         A
       </Button>
-      <Button type="submit" theme="success" shape="round">
+      <Button type="submit" shape="round">
         round
       </Button>
+      <h1>input</h1>
+      <hr></hr>
+      <Input
+        onChange={(e) => {
+          console.log(e)
+        }}
+      />
     </div>
   )
 }
