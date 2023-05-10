@@ -5,6 +5,15 @@ import './app.scss'
 function App() {
   const ref = React.createRef<HTMLButtonElement>()
   const ref2 = React.createRef<HTMLButtonElement>()
+  {
+    const a = 0
+    console.log(a)
+  }
+  {
+    const a = 2
+
+    console.log(a)
+  }
   useEffect(() => {
     console.log(ref2)
   }, [])
@@ -16,7 +25,7 @@ function App() {
       }}>
       <h2>button</h2>
       <hr />
-      <Button ref={ref2}>
+      <Button ref={ref2} className='mybutton'>
         <div>填充颜色</div>
       </Button>
       <Button
