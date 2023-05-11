@@ -16,7 +16,22 @@ function App() {
     console.log(a)
   }
   useEffect(() => {
-    console.log(ref2)
+    setTimeout(() => {
+      alert('我出现了')
+
+      const ele = React.createElement(
+        'div',
+        {
+          style: {
+            position: 'relative',
+            top: 50,
+            left: `50%`,
+            background: '0'
+          }
+        },
+        '66666'
+      )
+    }, 5000)
   }, [])
   return (
     <div
